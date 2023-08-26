@@ -27,15 +27,15 @@ public class SignUpServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		// // Capture data from the Sign Up form 
-//		String first_name = request.getParameter("first_name");
-//		String last_name = request.getParameter("last_name");
-//		String email = request.getParameter("email");
-//		String password = request.getParameter("password");
+		String first_name = request.getParameter("first_name");
+		String last_name = request.getParameter("last_name");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
 		
-		String first_name = "Saidi";
-		String last_name = "Manyerere";
-		String email = "manyerere201@gmail.com";
-		String password = "blender1";
+//		String first_name = "Saidi";
+//		String last_name = "Manyerere";
+//		String email = "manyerere201@gmail.com";
+//		String password = "blender1";
 		
 		// Connect to the database
 		try {
