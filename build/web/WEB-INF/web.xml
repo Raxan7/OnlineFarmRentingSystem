@@ -18,4 +18,13 @@
   	<servlet-name>Servlet3</servlet-name>
   	<url-pattern>/Servlet3</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>SignUpServlet</servlet-name>
+  	<servlet-class>SignUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SignUpServlet</servlet-name>
+  	<url-pattern>/SignUpServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
