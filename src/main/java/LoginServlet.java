@@ -30,11 +30,11 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 	    // Capture data from the Sign Up form 
-//		String email = request.getParameter("email");
-//		String password = request.getParameter("password");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
 		
-		String email = "manyerere201@gmail.com";
-		String password = "blender1";
+//		String email = "manyerere201@gmail.com";
+//		String password = "blender1";
 		
 		// Connect to the database
 		try {
