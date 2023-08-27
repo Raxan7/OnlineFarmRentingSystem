@@ -4,22 +4,18 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import helpers.DBConnection;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.sql.SQLException;
 
-/**
- * Servlet implementation class SignUpServlet
- */
+
 @WebServlet("/SignUpServlet")
 public class SignUpServlet extends HttpServlet {
-	/**
-	 * Sign Up Servlet provides the functionality to handle Sign Up into the system
-	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Connect to the actual form and send data into the database
 		
@@ -53,8 +49,7 @@ public class SignUpServlet extends HttpServlet {
 			statement.close();
 			conn.close();
 			out.print("Successfully sent the data into the database");
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (ClassNotFoundException | SQLException e) {
 			out.print("An error occured");
 		}
 		
