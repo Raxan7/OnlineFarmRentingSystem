@@ -27,4 +27,13 @@
   	<servlet-name>SignUpServlet</servlet-name>
   	<url-pattern>/SignUpServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>FarmRegisterServlet</servlet-name>
+  	<servlet-class>FarmRegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FarmRegisterServlet</servlet-name>
+  	<url-pattern>/FarmRegisterServlet</url-pattern>
+  </servlet-mapping>	  
 </web-app>
