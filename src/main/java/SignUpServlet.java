@@ -5,18 +5,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import helpers.DBConnection;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 
 
 @WebServlet("/SignUpServlet")
 public class SignUpServlet extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Connect to the actual form and send data into the database
 		
 		// I/O objects
@@ -48,7 +48,8 @@ public class SignUpServlet extends HttpServlet {
 			// Close the resources
 			statement.close();
 			conn.close();
-			out.print("Successfully sent the data into the database");
+			response.sendRedirect("home.html");
+			// out.print("Successfully sent the data into the database");
 		} catch (ClassNotFoundException | SQLException e) {
 			out.print("An error occured");
 		}
