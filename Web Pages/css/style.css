@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url("../images/background.jpg") no-repeat;
+    background: url("background.jpg") no-repeat;
     background-size: cover;
     background-position: center;
 
@@ -26,6 +26,17 @@ header{
     justify-content: space-between;
     align-items: center;
     z-index:99 ;
+}
+
+.home-content{
+    font-size: 2em;
+    color: #fff;
+    padding: 0 25px 0 25px;
+    text-shadow: 0 0 3px;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .logo{
@@ -89,6 +100,7 @@ header{
     position: relative;
     width: 400px;
     height: 440px;
+    margin-top: 70px;
     background: transparent;
     border: 2px solid rgba(255,255,255, .5);
     border-radius:20px;
@@ -102,6 +114,10 @@ header{
     transition: transform .5s ease, height .2s ease;
 }
 
+.overlay{
+    z-index: 9;
+    
+}
 .wrapper.active-popup{
     transform: scale(1);
 }
