@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -25,6 +26,8 @@ public class LoginServlet extends HttpServlet {
 	    // Capture data from the Sign Up form 
 		String email = request.getParameter("E-mail");
 		String password = request.getParameter("password");
+		
+		HttpSession session = request.getSession();
 		
 //		String email = "manyerere201@gmail.com";
 //		String password = "blender1";
@@ -45,6 +48,8 @@ public class LoginServlet extends HttpServlet {
 				out.println();
 ;				if (resultSet.getString(4).equals(password)) {
 					out.println("The user with the said password exists");
+					session.setAttribute("email", email);
+					session.setMaxInactiveInterval(3600);
 				} else {
 					out.println("Wrong password or email, please check again");
 				}

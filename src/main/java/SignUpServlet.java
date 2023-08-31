@@ -10,7 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import java.sql.SQLException;
+
 
 
 @WebServlet("/SignUpServlet")
@@ -22,9 +25,11 @@ public class SignUpServlet extends HttpServlet {
 		// I/O objects
 		PrintWriter out = response.getWriter();
 		
+		HttpSession session = request.getSession();
+		
 		// // Capture data from the Sign Up form 
-		String first_name = request.getParameter("firstname");
-		String last_name = request.getParameter("lastname");
+		String first_name = request.getParameter("fname");
+		String last_name = request.getParameter("lname");
 		String email = request.getParameter("E-mail");
 		String password = request.getParameter("password");
 		
@@ -37,7 +42,7 @@ public class SignUpServlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DBConnection.getConnection();
-			String sql = "INSERT INTO user (email, first_name, last_name, password) VALUES (?, ?, ?, ?)";
+			String sql = "INSERT INTO user (email, fname, lname, password) VALUES (?, ?, ?, ?)";
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, email);
 			statement.setString(2, first_name);
@@ -48,6 +53,10 @@ public class SignUpServlet extends HttpServlet {
 			// Close the resources
 			statement.close();
 			conn.close();
+			
+			session.setAttribute("email", email);
+			session.setMaxInactiveInterval(3600);
+			
 			response.sendRedirect("home.html");
 			// out.print("Successfully sent the data into the database");
 		} catch (ClassNotFoundException | SQLException e) {

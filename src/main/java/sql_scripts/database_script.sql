@@ -6,6 +6,7 @@ CREATE TABLE user (
 );
 
 CREATE TABLE farm (
+	id INT AUTO_INCREMENT PRIMARY KEY,
     location VARCHAR(100),
     description TEXT,
     image LONGBLOB,
