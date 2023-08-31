@@ -14,14 +14,7 @@
             </span>
             <div class="form-box">
                 <h2>Farm Details</h2>
-                <form action="#">
-                    <div class="input-box">
-                        <span class="icon">
-                            <ion-icon name="id-card"></ion-icon>
-                        </span>
-                        <input type="number" name="id" required>
-                        <label>Farm Identification Number</label>
-                    </div>
+                <form action="FarmRegisterServlet" method="post" enctype="multipart/form-data">
                     <div class="input-box">
                         <span class="icon">
                             <ion-icon name="location"></ion-icon>
@@ -33,14 +26,14 @@
                         <span class="icon">
                             <ion-icon name="image"></ion-icon>
                         </span>
-                        <input type="image" src="#" name="f_image" required>
+                        <input type="file" name="image" required>
                         <label>Farm Picture</label>
                     </div>
                     <div class="input-box">
                         <span class="icon">
                             <ion-icon name="text"></ion-icon>
                         </span>
-                        <textarea></textarea>
+                        <textarea name="description"></textarea>
                         <label>Farm Description</label>
                     </div>
                     <div class="input-box">
@@ -51,9 +44,9 @@
                         <label>Farm Size</label>
                     </div>
                     <div class="input-box">   
-                        <input type="radio" name="fstatus" value="Rent">
+                        <input type="radio" name="fstatus" value="RENT">
                         <label>Rent</label>
-                        <input type="radio" name="fstatus" value="Purchase">
+                        <input type="radio" name="fstatus" value="PURCHASE">
                         <label>Purchase</label>
                         <label>Farm Status</label>
                     </div>
@@ -64,6 +57,9 @@
                         <input type="text" name="contact" required>
                         <label>Contact</label>
                     </div>
+                    <div>
+						<input type="submit">
+					</div>
                 </form>
             </div>
         </div>

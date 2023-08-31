@@ -17,9 +17,10 @@
 		    flex-direction: row;
 		    justify-content: space-between;
 		    border-radius: 15px;
-		    max-width: 150%;
+		    min-width: 150%;
 		    max-height: 100%;
 		    margin-bottom: 10px;
+		    backdrop-filter: blur(20px);
 		}
 		.image img{
 		    border-radius: 15px;
@@ -36,6 +37,15 @@
 		    width: 97%;
 		    margin-right: 3%;
 		}
+		.list-view-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		paragraph {
+			text-align: left;
+		}
 	
 	   </style>
 	   <link rel="stylesheet" href="css/style.css">
@@ -49,22 +59,25 @@
 						   url="jdbc:mysql://localhost:3306/FarmRentSystemDB" 
 						   user="saidi" password="blender1"/>
 		<sql:query dataSource="${db}" var="rs">
-			SELECT * FROM images
+			SELECT * FROM farm
 		</sql:query>
 		
-		<c:forEach var="row" items="${rs.rows }">
-			<div class="about">
-		       <div class="paragraph">
-		   		<h2><c:out value="${row.name }"></c:out></h2>
-		           <h3>online farm selling and renting system </h3>
-		           Welcome to our online farm selling and renting system where we aim to simplify this matter
-		           and as we know most of people depend on agriculture in order to earn living. 
-		       </div>
-		       <div class="image">
-		           <img src="./FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" width="300px" height="200px">
-		       </div>
-		   </div>
-		</c:forEach>
+		<div class="list-view-container">
+			<c:forEach var="row" items="${rs.rows }">
+				<div class="about">
+			       <div class="paragraph" style="background-color: lightgreen;">
+			   		<h2><c:out value="${row.location }"></c:out></h2><!-- Farm Location for Rent/Buy -->
+			   		<br>
+			           <h4 style="text-align: left;"><c:out value="${row.farm_size }"></c:out> Hectares </h4>
+			           <br>
+			           <p style="text-align: left;"><c:out value="${row.description }"></c:out></p> 
+			       </div>
+			       <div class="image">
+			           <img src="./FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" width="300px" height="200px">
+			       </div>
+			   </div>
+			</c:forEach>
+		</div>
 	</body>
 </html>
 
