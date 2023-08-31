@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Farm registration</title>
+        <link rel="stylesheet" href="style1.css">
+    </head>
+    <body>
+        <div class="farm">
+            <span class="icon-close">
+                <ion-icon name="close"></ion-icon>
+            </span>
+            <div class="form-box">
+                <h2>Farm Details</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="id-card"></ion-icon>
+                        </span>
+                        <input type="number" name="id" required>
+                        <label>Farm Identification Number</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="location"></ion-icon>
+                        </span>
+                        <input type="text" name="location" required>
+                        <label>Farm Location</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="image"></ion-icon>
+                        </span>
+                        <input type="image" src="#" name="f_image" required>
+                        <label>Farm Picture</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="text"></ion-icon>
+                        </span>
+                        <textarea></textarea>
+                        <label>Farm Description</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="square"></ion-icon>
+                        </span>
+                        <input type="text" name="fsize" required>
+                        <label>Farm Size</label>
+                    </div>
+                    <div class="input-box">   
+                        <input type="radio" name="fstatus" value="Rent">
+                        <label>Rent</label>
+                        <input type="radio" name="fstatus" value="Purchase">
+                        <label>Purchase</label>
+                        <label>Farm Status</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="call"></ion-icon>
+                        </span>
+                        <input type="text" name="contact" required>
+                        <label>Contact</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
