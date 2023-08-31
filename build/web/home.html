@@ -6,27 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and Registration Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <h2 class="logo">Farmers<sup>Zone</sup></h2>
         <nav class="navigation">
             <a href="#">Home</a>
-            <a href="#">About</a>
+            <a href="snippet.html">About</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
             <button class="btnLogin-popup">Login</button>
         </nav>
-
     </header>
-
-
-    <!-- <div class="home-content"> -->
-        <!-- <center> -->
-            <!-- <p><h2><b>Welcome to farmers zone</b></h2></p>  -->
-        <!-- </center> -->
-    <!-- </div> -->
+    <div class="home-content">
+        <center>
+            <p><h2><b>Welcome to farmers zone</b></h2></p>
+        </center>
+    </div>
 
     <div class="wrapper overlay">
  
@@ -40,14 +37,14 @@
                     <span class="icon">
                         <ion-icon name="mail"></ion-icon>
                     </span>
-                    <input type="email" required>
+                    <input type="email" name="E-mail" required>
                     <label>Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-closed"></ion-icon>
                     </span>
-                    <input type="password" required>
+                    <input type="password" name="password" required>
                     <label>Password</label>
                 </div>
                 <div class="remember-forgot">
@@ -67,28 +64,28 @@
                     <span class="icon">
                         <ion-icon name="person"></ion-icon>
                     </span>
-                    <input type="text" required>
+                    <input type="text" name="fname">
                     <label>First Name</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="person"></ion-icon>
                     </span>
-                    <input type="text" required>
+                    <input type="text" name="lname">
                     <label>Last Name</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="mail"></ion-icon>
                     </span>
-                    <input type="email" required>
+                    <input type="email" name="E-mail">
                     <label>Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-closed"></ion-icon>
                     </span>
-                    <input type="password" required>
+                    <input type="password" name="password" required>
                     <label>Password</label>
                 </div>
                 <div class="remember-forgot">
@@ -101,7 +98,7 @@
             </form>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
