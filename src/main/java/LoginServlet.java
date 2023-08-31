@@ -1,10 +1,10 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import helpers.DBConnection;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,9 +16,13 @@ import javax.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
 
     @Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
+    	
+    	String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
+    	String USER = "saidi";
+    	String PASSWORD = "blender1";
 		
 		// I/O objects
 		PrintWriter out = response.getWriter();
@@ -28,14 +32,11 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		HttpSession session = request.getSession();
-		
-//		String email = "manyerere201@gmail.com";
-//		String password = "blender1";
-		
+
 		// Connect to the database
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DBConnection.getConnection();
+			Connection conn = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
 			String sql = "SELECT * FROM user WHERE email = '" + email + "'";
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultSet = statement.executeQuery();
@@ -50,6 +51,7 @@ public class LoginServlet extends HttpServlet {
 					out.println("The user with the said password exists");
 					session.setAttribute("email", email);
 					session.setMaxInactiveInterval(3600);
+					response.sendRedirect("test.jsp");
 				} else {
 					out.println("Wrong password or email, please check again");
 				}

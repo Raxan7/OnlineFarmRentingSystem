@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -15,12 +16,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.io.IOUtils;
-// Download library
-// https://commons.apache.org/proper/commons-io/download_io.cgi
-
-import helpers.DBConnection;
-
 /**
  * Servlet implementation class FarmDataRetrieveServlet
  */
@@ -33,18 +28,21 @@ public class FarmDataRetrieveServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
+		String USER = "saidi";
+		String PASSWORD = "blender1";
 		List<String> allId = new ArrayList<String>(); 
 		String id = request.getParameter("id");
 		byte[] img = null;
 		ServletOutputStream sos = null;
-		String sqlQuery = "SELECT * FROM images WHERE id = '"+ id + "'";
+		String sqlQuery = "SELECT image FROM farm WHERE id = '"+ id + "'";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection connection = DBConnection.getConnection();
+			Connection connection = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
 			PreparedStatement ps = connection.prepareStatement(sqlQuery);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				img = rs.getBytes(3);
+				img = rs.getBytes(1);
 			}
 			
 			sos = response.getOutputStream();
