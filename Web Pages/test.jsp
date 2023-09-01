@@ -7,9 +7,6 @@
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 		<style>
-		body {
-			padding: 20px;
-		}
 	    .about{
 		    padding: 1rem;
 		    border: 1px rgb(4, 4, 8) solid;
@@ -48,12 +45,12 @@
 		}
 	
 	   </style>
-	   <link rel="stylesheet" href="css/style.css">
+	   <%@ include file="auth/include/navbar_css.html" %>
 	</head>
-	<body style="text-align: center;">
+	<body style="text-align: center; background: silver;">
 		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 		<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
-		<%@ include file="navigation.html" %>
+		<%@ include file="auth/form_index.jsp" %>
 		
 		<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
 						   url="jdbc:mysql://localhost:3306/FarmRentSystemDB" 
@@ -62,6 +59,8 @@
 			SELECT * FROM farm
 		</sql:query>
 		
+		
+
 		<div class="list-view-container">
 			<c:forEach var="row" items="${rs.rows }">
 				<div class="about">
@@ -78,6 +77,8 @@
 			   </div>
 			</c:forEach>
 		</div>
+		
+		<%@ include file="auth/include/javascripts.html" %>
 	</body>
 </html>
 
