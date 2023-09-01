@@ -42,14 +42,18 @@ public class LoginServlet extends HttpServlet {
 			ResultSet resultSet = statement.executeQuery();
 
 			while (resultSet.next()) {
-				out.println(resultSet.getString(1));
-				out.println(resultSet.getString(2));
-				out.println(resultSet.getString(3));
-				out.println(resultSet.getString(4));
-				out.println();
+				System.out.println(resultSet.getString(1));
+				System.out.println(resultSet.getString(2));
+				System.out.println(resultSet.getString(3));
+				System.out.println(resultSet.getString(4));
+				System.out.println(resultSet.getString(5));
+				System.out.println();
 ;				if (resultSet.getString(4).equals(password)) {
 					out.println("The user with the said password exists");
 					session.setAttribute("email", email);
+					session.setAttribute("first_name", resultSet.getString(2));
+					session.setAttribute("last_name", resultSet.getString(3));
+					session.setAttribute("user_type", resultSet.getString(5));
 					session.setMaxInactiveInterval(3600);
 					response.sendRedirect("test.jsp");
 				} else {
