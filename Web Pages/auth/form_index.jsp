@@ -21,7 +21,7 @@
 
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <!-- <li><a href="#home-section" class="nav-link">Home</a></li> -->
-                  <!-- <li><a href="#services-section" class="nav-link">Services</a></li>  -->
+                  
 
 
                   <li class="has-children">
@@ -41,6 +41,14 @@
 						</c:otherwise>
 					 </c:choose>
                     </ul>
+                    <c:choose>
+						<c:when test="${user_type == 'SELLER' }">
+							<li><a href="#my-farm" class="nav-link">My Farm</a></li>
+						</c:when>
+						<c:otherwise>
+							
+						</c:otherwise>
+					 </c:choose>
                   </li>
 
                   <!-- <li><a href="#why-us-section" class="nav-link">Why Us</a></li>

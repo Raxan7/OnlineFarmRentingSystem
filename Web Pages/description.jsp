@@ -29,7 +29,7 @@
 	            </div>
 	            <div class="farm">
 	                <div style="padding: 10px;" class>
-	                    <h3>General discriptions</h3>
+	                    <h3>General descriptions</h3>
 	                    <h3  style="color: white"><c:out value="${row.description }"></c:out></h3>
 	                </div>
 	            </div>
@@ -52,7 +52,7 @@
 	                <h3>Specific: Tingatinga</h3> -->
 	            </div>
 	            <div class="descript">
-	                <h3 style="color: black">Farm sumary</h3>
+	                <h3 style="color: black">Farm summary</h3>
 	                <h3>Size: <c:out value="${row.farm_size }"></c:out> Hectares</h3>
 	                <h3>Suitable for: Maize & Rice</h3>
 	                <h3>Geographics: Basin</h3>
