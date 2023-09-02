@@ -33,8 +33,8 @@
                             <li><a href="#pricing-section" class="nav-link">Rent</a></li>
 						</c:when>
 						<c:when test="${user_type == 'SELLER' }">
-							<li><a href="#pricing-section" class="nav-link">Lease</a></li>
-                            <li><a href="#faq-section" class="nav-link">Sale</a></li>
+							<li><a href="add_farm.jsp" class="nav-link">Lease</a></li>
+                            <li><a href="add_farm.jsp" class="nav-link">Sale</a></li>
 						</c:when>
 						<c:otherwise>
 							
@@ -43,12 +43,19 @@
                     </ul>
                   </li>
 
-                  <li><a href="#why-us-section" class="nav-link">Why Us</a></li>
+                  <!-- <li><a href="#why-us-section" class="nav-link">Why Us</a></li>
 
                   <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
                   <li><a href="#blog-section" class="nav-link">Blog</a></li>
-                  <li><a href="#contact-section" class="nav-link">Contact</a></li>
-                  <li style="margin-left: 20px; font-size: 1.5em;"><strong>Welcome, ${first_name} ${last_name}</strong></li>
+                  <li><a href="#contact-section" class="nav-link">Contact</a></li> -->
+                  
+                  <li class="has-children">
+                    <a href="#profile" class="nav-link" style="font-size: 1.5em;"><strong>Welcome, ${first_name} ${last_name}</strong></a>
+                    <ul class="dropdown arrow-top">
+                    	<li><a href="LogoutServlet" class="nav-link">Logout</a></li>
+                    </ul>
+                  </li>
+                  
                 </ul>
               </nav>
 
