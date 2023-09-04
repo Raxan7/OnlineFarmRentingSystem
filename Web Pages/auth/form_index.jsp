@@ -43,7 +43,7 @@
                     </ul>
                     <c:choose>
 						<c:when test="${user_type == 'SELLER' }">
-							<li><a href="#my-farm" class="nav-link">My Farm</a></li>
+							<li><a href="MyFarm.jsp" class="nav-link">My Farm</a></li>
 						</c:when>
 						<c:otherwise>
 							
@@ -60,6 +60,7 @@
                   <li class="has-children">
                     <a href="#profile" class="nav-link" style="font-size: 1.5em;"><strong>Welcome, ${first_name} ${last_name}</strong></a>
                     <ul class="dropdown arrow-top">
+                    	<li><a href="#settings" class="accountSettings.jsp">Account Settings</a></li>
                     	<li><a href="LogoutServlet" class="nav-link">Logout</a></li>
                     </ul>
                   </li>
