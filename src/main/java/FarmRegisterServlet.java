@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 /**
@@ -24,6 +25,9 @@ public class FarmRegisterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		HttpSession session = request.getSession(false);
+		
 		String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
 		String USER = "saidi";
 		String PASSWORD = "blender1";
@@ -34,6 +38,7 @@ public class FarmRegisterServlet extends HttpServlet {
         String fsize = request.getParameter("fsize");
         String fstatus = request.getParameter("fstatus");
         String contact = request.getParameter("contact");
+        String owner = (String)session.getAttribute("email");
         Part filePart = request.getPart("image");
         InputStream inputStream = filePart.getInputStream();
 
@@ -43,7 +48,7 @@ public class FarmRegisterServlet extends HttpServlet {
         try {
         	Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
-            String SQL_INSERT_IMAGE = "INSERT INTO farm (location, description, image, farm_size, status, contact) VALUES (?, ?, ?, ?, ?, ?)";
+            String SQL_INSERT_IMAGE = "INSERT INTO farm (location, description, image, farm_size, status, contact, owner) VALUES (?, ?, ?, ?, ?, ?, ?)";
             statement = connection.prepareStatement(SQL_INSERT_IMAGE);
             statement.setString(1, location);
             statement.setString(2, description);
@@ -51,6 +56,7 @@ public class FarmRegisterServlet extends HttpServlet {
             statement.setString(4, fsize);
             statement.setString(5, fstatus);
             statement.setString(6, contact);
+            statement.setString(7, owner);
 
             // Insert the image into the database
             statement.executeUpdate();
