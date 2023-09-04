@@ -17,8 +17,8 @@
 		<c:set var="email" value="${sessionScope.email}" />
 		
 		<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
-						   url="jdbc:mysql://localhost:3306/FarmRentSystemDB" 
-						   user="saidi" password="blender1"/>
+						   url="jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7644068" 
+						   user="sql7644068" password="FjBAgfzDAG"/>
 		<sql:query dataSource="${db}" var="rs">
 			SELECT * FROM farm WHERE owner='<c:out value="${email}"></c:out>'
 		</sql:query>

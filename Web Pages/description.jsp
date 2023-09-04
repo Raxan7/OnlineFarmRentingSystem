@@ -14,8 +14,8 @@
 		<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 		
 		<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
-						   url="jdbc:mysql://localhost:3306/FarmRentSystemDB" 
-						   user="saidi" password="blender1"/>
+						   url="jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7644068" 
+						   user="sql7644068" password="FjBAgfzDAG"/>
 		<sql:query dataSource="${db}" var="rs">
 			SELECT * FROM farm WHERE id = <c:out value="${param.farm_id }"></c:out>
 		</sql:query>
