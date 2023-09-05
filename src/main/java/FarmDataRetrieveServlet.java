@@ -28,9 +28,14 @@ public class FarmDataRetrieveServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
-		String USER = "saidi";
-		String PASSWORD = "blender1";
+//		String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
+//		String USER = "saidi";
+//		String PASSWORD = "blender1";
+		
+		String JDBC_URL = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7644068";
+    	String USER = "sql7644068";
+    	String PASSWORD = "FjBAgfzDAG";
+		
 		List<String> allId = new ArrayList<String>(); 
 		String id = request.getParameter("id");
 		byte[] img = null;

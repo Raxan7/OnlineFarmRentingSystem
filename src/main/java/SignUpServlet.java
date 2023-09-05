@@ -23,9 +23,9 @@ public class SignUpServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Connect to the actual form and send data into the database
 		
-		String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
-    	String USER = "saidi";
-    	String PASSWORD = "blender1";
+		String JDBC_URL = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7644068";
+    	String USER = "sql7644068";
+    	String PASSWORD = "FjBAgfzDAG";
 		// I/O objects
 		PrintWriter out = response.getWriter();
 		
@@ -36,7 +36,7 @@ public class SignUpServlet extends HttpServlet {
 		String last_name = request.getParameter("lname");
 		String email = request.getParameter("E-mail");
 		String password = request.getParameter("password");
-		String user_type = "SELLER";
+		String user_type = request.getParameter("user_type");
 		
 //		String first_name = "Saidi";
 //		String last_name = "Manyerere";

@@ -20,9 +20,12 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
     	
-    	String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
-    	String USER = "saidi";
-    	String PASSWORD = "blender1";
+//    	String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
+//    	String USER = "saidi";
+//    	String PASSWORD = "blender1";
+    	String JDBC_URL = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7644068";
+    	String USER = "sql7644068";
+    	String PASSWORD = "FjBAgfzDAG";
 		
 		// I/O objects
 		PrintWriter out = response.getWriter();

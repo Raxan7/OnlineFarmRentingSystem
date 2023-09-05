@@ -6,8 +6,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Farm|View</title>
-        <link rel="stylesheet" href="css/farm.css">
-        <link rel="stylesheet" href="css/awesome/css/all.css">
+        <link rel="stylesheet" href="css/style11.css">
+
     </head>
     <body>
    		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -21,17 +21,15 @@
 		</sql:query>
 		
 		<c:forEach var="row" items="${rs.rows }">
-			<div class="container">
-	            <div class="farm">
-	                <div class="img">
-	                    <img src="./FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" width="850px" alt>
-	                </div>
-	            </div>
-	            <div class="farm">
-	                <div style="padding: 10px;" class>
+			<div class="farm">
+	               
+	                    <img src="./FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" width="850px" class="image">
+	    
+	            <div class="description">
+	                
 	                    <h3>General descriptions</h3>
 	                    <h3  style="color: white"><c:out value="${row.description }"></c:out></h3>
-	                </div>
+	                
 	            </div>
 	        </div>
 	        <div class="hidden" id="confirm">
@@ -40,8 +38,8 @@
 	            <div class="bottom descript">
 	                <h3 style="color: black">Actions</h3>
 	                <h3>Price: <i class="fa-solid fa-beat-fade"><c:out value="${row.price }"></c:out>/=</i></h3><br>
-	                <h3><button>Buy</button></h3>
-	                <h3><button>Rent</button></h3>
+	                <button>Edit</button>
+	            
 	                <i class="fa fa"></i>
 	            </div>
 	            <div class="descript">

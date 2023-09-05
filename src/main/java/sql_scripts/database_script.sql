@@ -13,5 +13,8 @@ CREATE TABLE farm (
     image LONGBLOB,
     farm_size VARCHAR(5),
     status VARCHAR(50) CHECK(status IN('RENT', 'PURCHASE')),
-    contact VARCHAR(100)
+    contact VARCHAR(100),
+    owner VARCHAR (100),
+    FOREIGN KEY (owner) 
+    REFERENCES user(email)
 );

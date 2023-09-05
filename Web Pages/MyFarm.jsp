@@ -14,11 +14,13 @@
 		<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 		<%@ include file="auth/form_index.jsp" %>
 		
+		<c:set var="email" value="${sessionScope.email}" />
+		
 		<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
 						   url="jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7644068" 
 						   user="sql7644068" password="FjBAgfzDAG"/>
 		<sql:query dataSource="${db}" var="rs">
-			SELECT * FROM farm
+			SELECT * FROM farm WHERE owner='<c:out value="${email}"></c:out>'
 		</sql:query>
 		
 		
@@ -26,7 +28,7 @@
 		<div class="list-view-container">
 			<c:forEach var="row" items="${rs.rows }">
 			   
-			   <a href="description.jsp?farm_id=${row.id }">
+			   <a href="Seller.jsp?farm_id=${row.id }">
 			   		<div class="product">
 					    <div class="product-image">
 					        <!-- Placeholder for product image -->
