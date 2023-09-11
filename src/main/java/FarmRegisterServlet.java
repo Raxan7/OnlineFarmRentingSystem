@@ -32,9 +32,9 @@ public class FarmRegisterServlet extends HttpServlet {
 //		String USER = "saidi";
 //		String PASSWORD = "blender1";
 		
-		String JDBC_URL = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7644068";
-    	String USER = "sql7644068";
-    	String PASSWORD = "FjBAgfzDAG";
+		String JDBC_URL = "jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db";
+    	String USER = "freedb_saidi";
+    	String PASSWORD = "7*vtUS?fjyBFJg3";
 		
 		// doGet(request, response);
 		// Get the image file from the request
@@ -42,7 +42,9 @@ public class FarmRegisterServlet extends HttpServlet {
         String description = request.getParameter("description");
         String fsize = request.getParameter("fsize");
         String fstatus = request.getParameter("fstatus");
+        String fprice = request.getParameter("fprice");
         String contact = request.getParameter("contact");
+        String sales_status = "AVAILABLE";
         String owner = (String)session.getAttribute("email");
         Part filePart = request.getPart("image");
         InputStream inputStream = filePart.getInputStream();
@@ -53,15 +55,17 @@ public class FarmRegisterServlet extends HttpServlet {
         try {
         	Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
-            String SQL_INSERT_IMAGE = "INSERT INTO farm (location, description, image, farm_size, status, contact, owner) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String SQL_INSERT_IMAGE = "INSERT INTO farm (location, description, image, farm_size, farm_price, status, sales_status, contact, owner) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             statement = connection.prepareStatement(SQL_INSERT_IMAGE);
             statement.setString(1, location);
             statement.setString(2, description);
             statement.setBlob(3, inputStream);
             statement.setString(4, fsize);
-            statement.setString(5, fstatus);
-            statement.setString(6, contact);
-            statement.setString(7, owner);
+            statement.setString(5, fprice);
+            statement.setString(6, fstatus);
+            statement.setString(7, sales_status);
+            statement.setString(8, contact);
+            statement.setString(9, owner);
 
             // Insert the image into the database
             statement.executeUpdate();
@@ -79,8 +83,6 @@ public class FarmRegisterServlet extends HttpServlet {
             response.setContentType("text/plain");
             response.getWriter().write("Image upload failed");
         }
-
-        
     }
 }
 

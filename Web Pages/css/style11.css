@@ -1,0 +1,68 @@
+body{
+    margin: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.image{
+    border-radius: 12px;
+    width: 35%;
+}
+
+#h3 {
+	font-size: 1.2em;
+	font-weight: 200;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.card{
+    width: auto;
+    margin: 0 auto 12px auto;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 6px solid #d8cefe;
+    background: #ddebf8;
+    color: #2b2839;
+}
+
+.farm-description-p {
+	padding: 10px;
+	color: rebeccapurple;
+}
+
+.border-blue{
+    border: 2px dotted blue;
+}
+
+.option {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.edit-delete-btns {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.custom-btns {
+	border-radius: 15px;
+	padding: 8px 12px;
+}
+
+#delete-btn {
+	color:red;
+	font-weight: bolder;
+	border: 1px solid red;
+}
+
+#edit-btn {
+	color: darkgreen;
+	font-weight: bolder;
+	border: 1px solid green;
+}

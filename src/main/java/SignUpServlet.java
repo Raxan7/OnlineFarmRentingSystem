@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-import helpers.DBConnection;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,9 +22,9 @@ public class SignUpServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Connect to the actual form and send data into the database
 		
-		String JDBC_URL = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7644068";
-    	String USER = "sql7644068";
-    	String PASSWORD = "FjBAgfzDAG";
+		String JDBC_URL = "jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db";
+    	String USER = "freedb_saidi";
+    	String PASSWORD = "7*vtUS?fjyBFJg3";
 		// I/O objects
 		PrintWriter out = response.getWriter();
 		

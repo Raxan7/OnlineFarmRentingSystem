@@ -20,9 +20,7 @@
               <nav class="site-navigation text-right ml-auto " role="navigation">
 
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                  <!-- <li><a href="#home-section" class="nav-link">Home</a></li> -->
-                  
-
+                  <li><a href="test.jsp" class="nav-link">Home</a></li>
 
                   <li class="has-children">
                     <a href="#about-section" class="nav-link">Services</a>

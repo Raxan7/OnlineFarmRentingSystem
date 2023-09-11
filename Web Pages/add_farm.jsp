@@ -29,7 +29,11 @@
             </div>
             <div class="form-group">
                 <label for="fsize">Farm Size</label>
-                <input type="text" id="fsize" name="fsize" required>
+                <input type="text" id="fsize" name="fsize" placeholder="Enter the Size in Hectares" required>
+            </div>
+            <div class="form-group">
+                <label for="fprice">Farm Price</label>
+                <input type="text" id="fprice" name="fprice" placeholder="Enter the Price in Tanzanian Shillings" required>
             </div>
             <div class="form-group">
                 <label>Farm Status</label>

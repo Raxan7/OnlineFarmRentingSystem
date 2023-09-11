@@ -20,9 +20,6 @@
               <nav class="site-navigation text-right ml-auto " role="navigation">
 
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                  <!-- <li><a href="#home-section" class="nav-link">Home</a></li> -->
-                  
-
 
                   <li class="has-children">
                     <a href="#about-section" class="nav-link">Services</a>
@@ -50,12 +47,6 @@
 						</c:otherwise>
 					 </c:choose>
                   </li>
-
-                  <!-- <li><a href="#why-us-section" class="nav-link">Why Us</a></li>
-
-                  <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
-                  <li><a href="#blog-section" class="nav-link">Blog</a></li>
-                  <li><a href="#contact-section" class="nav-link">Contact</a></li> -->
                   
                   <li class="has-children">
                     <a href="#profile" class="nav-link" style="font-size: 1.5em;"><strong>Welcome, ${first_name} ${last_name}</strong></a>
@@ -76,4 +67,3 @@
 
       </header>
   
-

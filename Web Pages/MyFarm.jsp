@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -10,21 +11,17 @@
 	   <link rel="stylesheet" href="css/list_view.css">
 	</head>
 	<body style="text-align: center; background: silver;">
-		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-		<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 		<%@ include file="auth/form_index.jsp" %>
 		
 		<c:set var="email" value="${sessionScope.email}" />
 		
 		<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
-						   url="jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7644068" 
-						   user="sql7644068" password="FjBAgfzDAG"/>
+						   url="jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db" 
+						   user="freedb_saidi" password="7*vtUS?fjyBFJg3"/>
 		<sql:query dataSource="${db}" var="rs">
 			SELECT * FROM farm WHERE owner='<c:out value="${email}"></c:out>'
 		</sql:query>
 		
-		
-
 		<div class="list-view-container">
 			<c:forEach var="row" items="${rs.rows }">
 			   
@@ -40,7 +37,7 @@
 					            ${row.description }
 					        </p>
 					        <div class="sales-details-div">
-					        	<p class="product-price"><strong>Price : </strong>$100.00</p>
+					        	<p class="product-price"><strong>Price : </strong>Tsh. <c:out value="${row.farm_price }"></c:out></p>
 					        	<p class="product-status"><strong style="color: indigo;">Availability : </strong>Available</p>
 					        </div>
 					        

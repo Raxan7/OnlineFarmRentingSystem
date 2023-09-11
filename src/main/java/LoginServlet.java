@@ -23,9 +23,9 @@ public class LoginServlet extends HttpServlet {
 //    	String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
 //    	String USER = "saidi";
 //    	String PASSWORD = "blender1";
-    	String JDBC_URL = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7644068";
-    	String USER = "sql7644068";
-    	String PASSWORD = "FjBAgfzDAG";
+    	String JDBC_URL = "jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db";
+    	String USER = "freedb_saidi";
+    	String PASSWORD = "7*vtUS?fjyBFJg3";
 		
 		// I/O objects
 		PrintWriter out = response.getWriter();
