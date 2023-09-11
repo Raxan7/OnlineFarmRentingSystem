@@ -15,12 +15,16 @@
 		<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 		<%@ include file="auth/form_index.jsp" %>
 		
+		
+		
 		<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
 						   url="jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db" 
 						   user="freedb_saidi" password="7*vtUS?fjyBFJg3"/>
 		<sql:query dataSource="${db}" var="rs">
 			SELECT * FROM farm WHERE id = <c:out value="${param.farm_id }"></c:out>
 		</sql:query>
+		
+		
 		
 		<c:forEach var="row" items="${rs.rows }">
 			<div class="card">
@@ -54,7 +58,7 @@
 	            </div>
 	        </div>
 	        <div class="edit-delete-btns">
-	        	<a href="#edit"><button id="edit-btn" class="custom-btns">Edit</button></a>
+	        	<a href="Edit.jsp?farm_id=${row.id }"><button id="edit-btn" class="custom-btns">Edit</button></a>
 	        	<a href="#delete"><button id="delete-btn" class="custom-btns">Delete</button></a>
 	        </div>
 		</c:forEach>
