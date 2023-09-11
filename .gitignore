@@ -11,3 +11,8 @@ hs_err_pid*
 # Intellij
 .idea/
 /dist/
+
+build/
+
+.classpath
+.settings/
