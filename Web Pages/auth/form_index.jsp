@@ -43,6 +43,9 @@
 						<c:when test="${user_type == 'SELLER' }">
 							<li><a href="MyFarm.jsp" class="nav-link">My Farm</a></li>
 						</c:when>
+						<c:when test="${user_type == 'BUYER' }">
+							<li><a href="#" class="nav-link">My Assets</a></li>
+						</c:when>
 						<c:otherwise>
 							
 						</c:otherwise>

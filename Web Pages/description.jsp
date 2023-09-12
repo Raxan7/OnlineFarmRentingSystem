@@ -55,17 +55,24 @@
 	        </div>
 	        <div class="edit-delete-btns">
 	        	<c:choose>
-					<c:when test="${user_type == 'BUYER' }">
-						<a href="#edit"><button id="edit-btn" class="custom-btns">Edit</button></a>
-	        			<a href="#delete"><button id="delete-btn" class="custom-btns">Delete</button></a>
-					</c:when>
-					<c:when test="${user_type == 'SELLER' }">
-
-					</c:when>
-					<c:otherwise>
-						
-					</c:otherwise>
-				 </c:choose>
+	        		<c:when test="${row.sales_status == 'AVAILABLE' }">
+	        			<c:choose>
+							<c:when test="${user_type == 'BUYER' }">
+								<a href="buy.jsp?farm_id=${row.id}"><button id="edit-btn" class="custom-btns">BUY</button></a>
+			        			<a href="#delete"><button id="edit-btn" class="custom-btns">RENT</button></a>
+							</c:when>
+							<c:when test="${user_type == 'SELLER' }">
+		
+							</c:when>
+							<c:otherwise>
+								
+							</c:otherwise>
+						 </c:choose>
+	        		</c:when>
+	        		<c:otherwise>
+	        			<h3 style="color: red;">This farm is already sold, thus it is no longer available</h3>
+	        		</c:otherwise>
+	        	</c:choose>
 	        </div>        
 	        
 		</c:forEach>

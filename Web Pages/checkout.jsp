@@ -42,7 +42,7 @@
                 </center>
                 <br><br>
                 <center>
-                    <a href=""><img style="width: 40px;" src="images/ok.png" alt=""></a>
+                    <a href="test.jsp"><img style="width: 40px;" src="images/ok.png" alt=""></a>
                 </center>
             </div>
         </center>

@@ -18,5 +18,8 @@ CREATE TABLE farm (
     contact VARCHAR(100),
     owner VARCHAR (100) NOT NULL,
     FOREIGN KEY (owner) 
+    REFERENCES user(email),
+    buyer_id VARCHAR(100),
+    FOREIGN KEY (buyer_id) 
     REFERENCES user(email)
 );
