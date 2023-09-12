@@ -70,7 +70,7 @@
 						 </c:choose>
 	        		</c:when>
 	        		<c:otherwise>
-	        			<h3 style="color: red;	">This farm is already sold, thus it is no longer available</h3>
+	        			<h3 style="color: red;">This farm is already sold, thus it is no longer available</h3>
 	        		</c:otherwise>
 	        	</c:choose>
 	        </div>        

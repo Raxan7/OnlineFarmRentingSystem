@@ -32,8 +32,6 @@
         <c:set var="f_status" value="${row.status}" />
         <c:set var="scontact" value="${row.contact}" />
 	</c:forEach>
-	
-	<h1><c:out value="${param.farm_id}" ></c:out></h1>
 		
     <div class="form-container">
         <h2>Farm Details</h2>

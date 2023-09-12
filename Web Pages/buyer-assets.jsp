@@ -48,7 +48,6 @@
 										
 									</c:otherwise>
 								 </c:choose>
-					        	<p class="product-status"><strong style="color: indigo;">Availability : </strong><c:out value="${row.sales_status }"></c:out></p>
 					        </div>
 					        
 					    </div>
