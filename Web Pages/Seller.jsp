@@ -39,15 +39,15 @@
 	        <br>
 	        <div class="option">
 	            <div class="bottom descript">
-	                <h3 id="h3" style="color: black">Actions</h3>
+	                <h3 id="h3" style="color: black">Farm Price</h3>
 	                <h3 id="h3">Price: <i class="fa-solid fa-beat-fade"><c:out value="${row.farm_price }"></c:out>/=</i></h3><br>
 	            </div>
 	            <div class="descript">
-	                <h3 id="h3" style="color: black">Location</h3>
+	                <h3 id="h3" style="color: black">Farm Location</h3>
 	                <h3 id="h3"><c:out value="${row.location }"></c:out></h3>
 	            </div>
 	            <div class="descript">
-	                <h3 id="h3" style="color: black">Farm summary</h3>
+	                <h3 id="h3" style="color: black">Farm Summary</h3>
 	                <h3 id="h3">Size: <c:out value="${row.farm_size }"></c:out> Hectares</h3>
 	                <h3 id="h3">Suitable for: Maize & Rice</h3>
 	            </div>

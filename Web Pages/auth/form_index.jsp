@@ -27,8 +27,8 @@
                     <ul class="dropdown arrow-top">
                       <c:choose>
 						<c:when test="${user_type == 'BUYER' }">
-							<li><a href="#team-section" class="nav-link">Buy</a></li>
-                            <li><a href="#pricing-section" class="nav-link">Rent</a></li>
+							<li><a href="buyer.jsp?status=PURCHASE" class="nav-link">Buy</a></li>
+                            <li><a href="buyer.jsp?status=RENT" class="nav-link">Rent</a></li>
 						</c:when>
 						<c:when test="${user_type == 'SELLER' }">
 							<li><a href="add_farm.jsp" class="nav-link">Lease</a></li>
