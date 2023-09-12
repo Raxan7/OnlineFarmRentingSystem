@@ -59,7 +59,7 @@
 	        </div>
 	        <div class="edit-delete-btns">
 	        	<a href="Edit.jsp?farm_id=${row.id }"><button id="edit-btn" class="custom-btns">Edit</button></a>
-	        	<a href="#delete"><button id="delete-btn" class="custom-btns">Delete</button></a>
+	        	<a href="DeleteServlet?farm_id=${row.id }"><button id="delete-btn" class="custom-btns">Delete</button></a>
 	        </div>
 		</c:forEach>
     </body>
