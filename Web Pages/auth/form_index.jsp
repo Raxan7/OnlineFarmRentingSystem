@@ -31,8 +31,8 @@
                             <li><a href="buyer.jsp?status=RENT" class="nav-link">Rent</a></li>
 						</c:when>
 						<c:when test="${user_type == 'SELLER' }">
-							<li><a href="add_farm.jsp" class="nav-link">Lease</a></li>
-                            <li><a href="add_farm.jsp" class="nav-link">Sale</a></li>
+							<li><a href="add_farm.jsp" class="nav-link">Lease/Sale</a></li>
+                            
 						</c:when>
 						<c:otherwise>
 							
