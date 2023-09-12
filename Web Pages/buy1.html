@@ -1,0 +1,124 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <style>
+            body {
+                background-color: #e9e0e0fa;
+            }
+
+            .input {
+                position: relative;
+                margin: 20px;
+            }
+
+            .input input {
+                font-size: 16px;
+                min-width: 1ch;
+                background-color: #cdccccfa;
+                outline: none;
+                height: 0.5rem;
+                border: none;
+                border-bottom: 2px #75bb6d solid;
+                transform: border 1s ease-in-out;
+                border-top-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            .input label {
+                font-size: 20px;
+                position: absolute;
+                top: 0px;
+                left: 6px;
+                transition: 1s ease-out;
+            }
+
+            .input-field {
+                padding: 10px;
+                transition: 1s ease-out;
+            }
+
+            .input-field:focus {
+                background-color: #e9e0e0;
+                border-color: #ffb7b7;
+                transform-origin: center;
+            }
+
+            .input-field:focus+label {
+                top: -25px;
+                color: #f55151;
+            }
+
+            .input input:valid+label {
+                top: -25px;
+            }
+
+            .form form {
+                width: 50%;
+                background-color: #f4eeee;
+                padding: 2rem;
+                box-shadow: 4px 3px 3px #cecece;
+                border-top-left-radius: 10px;
+                border-bottom-right-radius: 50px;
+            }
+
+            .form {
+                transform: translateY(7%);
+                display: flex;
+                justify-content: center;
+            }
+
+            .submit input {
+                height: 1.5rem;
+                border: none;
+                border-radius: 20px;
+                background-color: #cdccccfa;
+                width: 10rem;
+            }
+
+            .submit input:hover {
+                background-color: #ffb7b7;
+            }
+
+            h2 {
+                color: #75bb6d;
+                .h3{
+                    text-align: center;
+                }
+            }
+
+            .image img {
+                border-radius: 10px;
+                min-width: 50%;
+                max-width:60px;
+                display:flex;
+                margin-bottom:1rem;
+            }
+            </style>
+        </head>
+
+        <body>
+        <center>
+            <div class="form">
+                <form action="checkout.jsp">
+                    <h2>Price form</h2><br>
+                    <div class="input">
+                        <h3>Tsh 500,000/=</h3>
+                    </div>
+                    <input type="submit">
+                <br>
+                <div class="image">
+                    <img src="hilda.jpg" alt="">
+                </div>
+                <input type="submit" value="confirm  transaction ">
+
+            </form>
+
+        </div>
+    </center>
+    <br><br><br>
+    <br><br><br>
+</body>
+
+</html>

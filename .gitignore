@@ -1,0 +1,40 @@
+# Compiled Java Classes
+target/
+bin/
+
+# IDE and Editor Files
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+
+# Build and Dependency Management Files
+.gradle/
+.mvn/
+target/
+build/
+
+# Logs and Temporary Files
+*.log
+*.log.*
+logs/
+tmp/
+
+# Configuration Files with Sensitive Information
+# (Add specific filenames and patterns for your configuration files)
+
+# Generated Files
+generated/
+
+# IDE Project Files
+.settings/
+
+# Operating System and Editor Backup Files
+.DS_Store
+*~
+*.swp
+
+# Temporary Build Files
+temp/
+
