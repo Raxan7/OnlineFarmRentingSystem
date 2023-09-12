@@ -63,4 +63,12 @@
   	<servlet-name>BuyServlet</servlet-name>
   	<url-pattern>/BuyServlet</url-pattern>
   </servlet-mapping>
+    <servlet>
+  	<servlet-name>RentServlet</servlet-name>
+  	<servlet-class>RentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>RentServlet</servlet-name>
+  	<url-pattern>/RentServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

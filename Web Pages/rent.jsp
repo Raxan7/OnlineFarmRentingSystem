@@ -118,9 +118,11 @@
 			
 			<c:forEach var="row" items="${rs.rows }">
 				<div class="form">
-	               <form action="BuyServlet" method="post">
-	                   <h2>Price Form</h2><br>
+	               <form action="RentServlet" method="post">
+	                   <h2>Rent Cost Form</h2><br>
 	                   <input type="hidden" id="farm_id" name="farm_id" value="<c:out value="${param.farm_id}" />">
+	                   <label>Rent Duration:</label>
+	                   <input type="date" name="date" required>
 	                   <div class="input">
 	                       <h3>Tsh <c:out value="${row.farm_price }"></c:out>/=</h3>
 	                   </div>
@@ -128,7 +130,7 @@
 		               <div class="image">
 		                   <img src="./FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" alt="">
 		               </div>
-		               <input type="submit" value="Confirm  transaction ">
+		               <input type="submit" value="Confirm transaction ">
 		           </form>
 		       </div>
 			</c:forEach>

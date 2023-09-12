@@ -63,13 +63,13 @@
 										<a href="buy.jsp?farm_id=${row.id}"><button id="edit-btn" class="custom-btns">BUY</button></a>
 									</c:when>
 									<c:when test="${row.status == 'RENT' }">
-										<a href="#delete"><button id="edit-btn" class="custom-btns">RENT</button></a>
+										<a href="rent.jsp?farm_id=${row.id}"><button id="edit-btn" class="custom-btns">RENT</button></a>
 									</c:when>
 									<c:otherwise>
 									
 									</c:otherwise>
 								</c:choose>
-								
+					
 							</c:when>
 							<c:when test="${user_type == 'SELLER' }">
 		
