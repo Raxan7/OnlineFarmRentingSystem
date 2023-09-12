@@ -1,18 +1,40 @@
-# Package Files #
-*.jar
-*.war
-*.ear
+# Compiled Java Classes
+target/
+bin/
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-
-
-
-# Intellij
+# IDE and Editor Files
 .idea/
-/dist/
+.vscode/
+*.iml
+.classpath
+.project
 
+# Build and Dependency Management Files
+.gradle/
+.mvn/
+target/
 build/
 
-.classpath
+# Logs and Temporary Files
+*.log
+*.log.*
+logs/
+tmp/
+
+# Configuration Files with Sensitive Information
+# (Add specific filenames and patterns for your configuration files)
+
+# Generated Files
+generated/
+
+# IDE Project Files
 .settings/
+
+# Operating System and Editor Backup Files
+.DS_Store
+*~
+*.swp
+
+# Temporary Build Files
+temp/
+
