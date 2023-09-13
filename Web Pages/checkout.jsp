@@ -1,3 +1,6 @@
+<%
+response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidate"); 
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
