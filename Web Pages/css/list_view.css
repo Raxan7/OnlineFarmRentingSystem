@@ -3,6 +3,10 @@ img {
 	border-radius: 15px;
 }
 
+.image {
+	width: 160%;
+}
+
 strong {
 	font-weight: bolder;
 }

@@ -29,7 +29,7 @@
 							<div class="product">
 							    <div class="product-image">
 							        
-							        <img src="./FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" alt="Product Image">
+							        <img class="image" src="./FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" alt="Product Image">
 							    </div>
 							    <div class="product-details">
 							        <h3 class="product-title">Farm Location : <strong><c:out value="${row.location }"></c:out></strong></h3>
