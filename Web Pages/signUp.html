@@ -11,18 +11,23 @@
 	    <form action="SignUpServlet" method="post">
 			<h2 align="center">Sign Up Here</h2>
 			<label>Firstname</label><br>
-			<input type="text" name="firstname" placeholder="firstname"><br>
+			<input type="text" name="fname" placeholder="First Name"><br>
 			<label>Lastname</label><br>
-			<input type="text" name="lastname" placeholder="Lastname"><br>
+			<input type="text" name="lname" placeholder="Last Name"><br>
 			<label>E-mail</label><br>
 			<input type="email" name="E-mail" placeholader="E-mail"><br>
 			<label>password</label><br>
 			<input type="password" name="password" placeholder="password"><br>
-			<label>confirm password</label><br>
-			<input type="password" name="confirm_password" placeholder="confirm password"><br>
+			<div class="remember-forgot">
+					<label for="user_type_seller"><strong>SELLER</strong></label>
+                    <input name="user_type" id="user_type_seller" type="radio" value="SELLER" required>
+                    <label for="user_type_buyer"><strong>BUYER</strong></label>
+                    <input name="user_type" id="user_type_buyer" type="radio" value="BUYER" required>
+                </div>
 			<input type="submit" name="register" value="Register"><br>
 			<p align="center">Already registered? <a href="login.html">Login here</a></p>
 		     
 		</form>
+		<a href="home.html" style="text-align: center;"><button>Back To Home Page</button></a>
 	</body>
 </html>

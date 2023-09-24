@@ -13,7 +13,7 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
 </head>
 <body>
     <h1>Image Gallery</h1>
-    <img src="./FarmDataRetrieveServlet?id=1" width="100px" height="100px">
+    <img src=".././FarmDataRetrieveServlet?id=1" width="100px" height="100px">
     
     <c:forEach var="imageData" items="${imageIds}">
         <h2><c:out value="${imageData}"/></h2>
@@ -21,7 +21,7 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
     </c:forEach>
 
     <c:forEach var="imageData" items="${imageIds}">
-        <img src="./FarmDataRetrieveServlet?id=<c:out value="${imageData}"/>" width="100px" height="100px">
+        <img src=".././FarmDataRetrieveServlet?id=<c:out value="${imageData}"/>" width="100px" height="100px">
         <br>
     </c:forEach>
 </body>

@@ -1,11 +1,15 @@
-</html>
+<%
+response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidate"); 
+%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
-    <head>
+<html>
+<head>
         <style>
             body {
                 background-color: #e9e0e0fa;
+                text-align: center;
             }
 
             .input {
@@ -67,6 +71,7 @@
                 transform: translateY(7%);
                 display: flex;
                 justify-content: center;
+                align-items: center;
             }
 
             .submit input {
@@ -95,30 +100,44 @@
                 display:flex;
                 margin-bottom:1rem;
             }
-            </style>
+            
+            .image {
+            	display: flex;
+                justify-content: center;
+            }
+            </style>	
         </head>
 
         <body>
-        <center>
-            <div class="form">
-                <form action="checkout.jsp">
-                    <h2>Price form</h2><br>
-                    <div class="input">
-                        <h3>Tsh 500,000/=</h3>
-                    </div>
-                    <input type="submit">
-                <br>
-                <div class="image">
-                    <img src="hilda.jpg" alt="">
-                </div>
-                <input type="submit" value="confirm  transaction ">
-
-            </form>
-
-        </div>
-    </center>
+        	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+			<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+			
+			<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
+			   url="jdbc:mysql://localhost:3306/FarmRentSystemDB" 
+			   user="saidi" password="blender1"/>
+			
+			
+			<sql:query dataSource="${db}" var="rs">
+				SELECT * FROM farm WHERE id = <c:out value="${param.farm_id }"></c:out>
+			</sql:query>
+			
+			<c:forEach var="row" items="${rs.rows }">
+				<div class="form">
+	               <form action="../BuyServlet" method="post">
+	                   <h2>Price Form</h2><br>
+	                   <input type="hidden" id="farm_id" name="farm_id" value="<c:out value="${param.farm_id}" />">
+	                   <div class="input">
+	                       <h3>Tsh <c:out value="${row.farm_price }"></c:out>/=</h3>
+	                   </div>
+		               <br>
+		               <div class="image">
+		                   <img src=".././FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" alt="">
+		               </div>
+		               <input type="submit" value="Confirm  transaction ">
+		           </form>
+		       </div>
+			</c:forEach>
     <br><br><br>
     <br><br><br>
 </body>
-
 </html>

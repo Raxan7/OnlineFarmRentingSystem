@@ -17,8 +17,8 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
 	<body>
 		<div>
 			<h1>The image is to appear here</h1>
-			<img src="./FarmDataRetrieveServlet?id=1" width="100px" height="100px">
-			<img src="./FarmDataRetrieveServlet?id=2" width="100px" height="100px">
+			<img src=".././FarmDataRetrieveServlet?id=1" width="100px" height="100px">
+			<img src=".././FarmDataRetrieveServlet?id=2" width="100px" height="100px">
 		</div>
 		<div>
 			

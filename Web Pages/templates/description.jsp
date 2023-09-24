@@ -9,25 +9,26 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Farm|View</title>
-        <%@ include file="auth/include/navbar_css.html" %>
-        <link rel="stylesheet" href="css/style11.css">
+        <%@ include file="../auth/include/navbar_css.html" %>
+        <link rel="stylesheet" href="../css/style11.css">
 
     </head>
     <body>
    		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 		<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
-		<%@ include file="auth/form_index.jsp" %>
+		<%@ include file="../auth/form_index.jsp" %>
 		
 		<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
-						   url="jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db" 
-						   user="freedb_saidi" password="7*vtUS?fjyBFJg3"/>
+			   url="jdbc:mysql://localhost:3306/FarmRentSystemDB" 
+			   user="saidi" password="blender1"/>
+			   
 		<sql:query dataSource="${db}" var="rs">
 			SELECT * FROM farm WHERE id = <c:out value="${param.farm_id }"></c:out>
 		</sql:query>
 		
 		<c:forEach var="row" items="${rs.rows }">
 			<div class="card">
-	            <img src="./FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" class="image">
+	            <img src=".././FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" class="image">
 	            <div>
 	            	<h2>Farm Description</h2>
 	                <h3><c:out value="${row.location }"></c:out></h3>

@@ -13,7 +13,7 @@
 
 
             <div class="site-logo">
-              <a href="index.html" class="text-black"><span class="text-primary">Farmers<sup>Zone</sup></a>
+              <a href="test.jsp" class="text-black"><span class="text-primary">Farmers<sup>Zone</sup></a>
             </div>
 
             <div class="col-12">
@@ -61,8 +61,9 @@
                   <li class="has-children">
                     <a href="#profile" class="nav-link" style="font-size: 1.5em;"><strong>Welcome, ${first_name} ${last_name}</strong></a>
                     <ul class="dropdown arrow-top">
-                    	<li><a href="#settings" class="accountSettings.jsp">Account Settings</a></li>
-                    	<li><a href="LogoutServlet" class="nav-link">Logout</a></li>
+                    	<!-- <li><a href="#settings" class="accountSettings.jsp">Account Settings</a></li> -->
+                    	<li><a href="../GetReport" class="nav-link">Generate Farms Report</a></li>
+                    	<li><a href="../LogoutServlet" class="nav-link">Logout</a></li>
                     </ul>
                   </li>
                   

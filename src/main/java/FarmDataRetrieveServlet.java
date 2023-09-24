@@ -32,9 +32,9 @@ public class FarmDataRetrieveServlet extends HttpServlet {
 //		String USER = "saidi";
 //		String PASSWORD = "blender1";
 		
-		String JDBC_URL = "jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db";
-    	String USER = "freedb_saidi";
-    	String PASSWORD = "7*vtUS?fjyBFJg3";
+		String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
+    	String USER = "saidi";
+    	String PASSWORD = "blender1";
 		
 		List<String> allId = new ArrayList<String>(); 
 		String id = request.getParameter("id");

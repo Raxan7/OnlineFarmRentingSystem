@@ -10,18 +10,19 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farm Registration</title>
-    <link rel="stylesheet" href="css/add_farm_styles.css">
-    <%@ include file="auth/include/navbar_css.html" %>
+    <link rel="stylesheet" href="../css/add_farm_styles.css">
+    <%@ include file="../auth/include/navbar_css.html" %>
 </head>
 <body>
-	<%@ include file="auth/form_index.jsp" %>
+	<%@ include file="../auth/form_index.jsp" %>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 	
 	
 	<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
-						   url="jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db"						   
-						   user="freedb_saidi" password="7*vtUS?fjyBFJg3"/>
+			   url="jdbc:mysql://localhost:3306/FarmRentSystemDB" 
+			   user="saidi" password="blender1"/>
+			   
 	<sql:query dataSource="${db}" var="rs">
 		SELECT * FROM farm WHERE id = <c:out value="${param.farm_id }"></c:out>
 	</sql:query>
@@ -38,7 +39,7 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
 		
     <div class="form-container">
         <h2>Farm Details</h2>
-        <form action="EditFarmServelet" method="post">
+        <form action="../EditFarmServelet" method="post">
         	<input type="hidden" id="farm_id" name="farm_id" value="<c:out value="${param.farm_id}" />">
         	
             <div class="form-group">

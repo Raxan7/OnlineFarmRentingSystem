@@ -10,14 +10,14 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farm Registration</title>
-    <link rel="stylesheet" href="css/add_farm_styles.css">
-    <%@ include file="auth/include/navbar_css.html" %>
+    <link rel="stylesheet" href="../css/add_farm_styles.css">
+    <%@ include file="../auth/include/navbar_css.html" %>
 </head>
 <body>
-	<%@ include file="auth/form_index.jsp" %>
+	<%@ include file="../auth/form_index.jsp" %>
     <div class="form-container">
         <h2>Farm Details</h2>
-        <form action="FarmRegisterServlet" method="post" enctype="multipart/form-data">
+        <form action="../FarmRegisterServlet" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="location">Farm Location</label>
                 <input type="text" id="location" name="location" required>
@@ -54,6 +54,6 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
             </div>
         </form>
     </div>
-    <%@ include file="auth/include/javascripts.html" %>
+    <%@ include file="../auth/include/javascripts.html" %>
 </body>
 </html>

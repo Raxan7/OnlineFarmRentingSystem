@@ -1,76 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/services.css">
-    <title>Services</title>
-    <style>
-        
-    .services{
-        margin-top: 5rem;
-    padding: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-radius: 15px;
-    max-width: 100%;
-    max-height: 100%;
-}
-.image img{
-    border-radius: 15px;
-    width: 80%;
-    margin-top: 2rem;
-}
-h2,h2,h2{
-    text-align: center;
-}
-.paragraph{
-    padding: 1rem;
-    background-color:#f3fde8;
-    border-radius: 15px;
-    left: 1rem;
-    width: 300%;
-    margin-right: 3%;
-    margin-top: 2rem;
-}
 
-    </style>
-</head>
-<body>
-    
-     <header>
-        <h2 class="logo">Farmers<sup>Zone</sup></h2>
-        <nav class="navigation">
-            <a href="home.html">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-            <button class="btnLogin-popup">Login</button>
-        </nav>
+	<head>
+	    <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Services</title>
+	    <link rel="stylesheet" href="css/style.css">
+	    <style>
+			#mirror{
+				backdrop-filter: blur(20px);
+				padding: 12px 20px;
+				font-size: 0.7em;
+				border-radius: 20px;
+				font-family: cursive;
+			}
+		</style>
+	</head>
+	<body>
+	    <header>
+	        <h2 class="logo">Farmers<sup>Zone</sup></h2>
+	        <nav class="navigation">
+	            <a href="home.html">Home</a>
+	            <a href="about.html">About</a>
+	            <a href="services.html">Services</a>
+	            <a href="contact.html">Contact</a>
+	            <button class="btnLogin-popup">Login</button>
+	        </nav>
+	    </header>
+	    <div class="home-content">
+	        <center>
+				<div id="mirror">
+					<h2>Buying Farm</h2> Here we allow a registered farmer to choose one of the uploaded 
+		            farm after being satisfied with the description provided about the farm and every
+		            details about the farm.
+		            <br>
+		            <br>
+		            <h2>Selling Farm</h2> 
+		            The land owners who have registered can upload their farms and the whole details
+		            about farm considering description of the farm, location and what type of crops
+		            that can grow easily in that specific farm.
+		            <br>
+		            <br>
+		            <h2>Renting Farm</h2>
+		             The registered farmers can rent the uploaded farm by land owners considering the 
+		             description of farm provided and the time for renting
+				</div>
 
-    </header>
-    <div class="services">
-        <div class="paragraph">
-            <h2>Buying</h2> Here we allow a registered farmer to choose one of the uploaded 
-            farm after being satisfied with the description provided about the farm and every
-            details about the farm.
-            <br>
-            <h2>Selling</h2> 
-            The land owners who have registered can upload their farms and the whole details
-            about farm considering description of the farm, location and what type of mazao
-            that can grow easily in that specific farm.
-            <br>
-            <h2>Renting</h2>
-             The registered farmers can rent the uploaded farm by land owners considering the 
-             description of farm provided and the time for renting
-        </div>
-        <div class="image">
-            <img src="images/shamba.jpg" alt="">
-            <img src="images/pexel.jpg" alt="">
-        </div>
-    </div>
-    
-
-</body>
+	        </center>
+	    </div>
+	
+	    <div class="wrapper overlay">
+	 
+	        <span class="icon-close">
+	            <ion-icon name="close"></ion-icon>
+	        </span>
+	        <div class="form-box login">
+	            <h2>Login</h2>
+	            <form action="LoginServlet" method="post">
+	                <div class="input-box">
+	                    <span class="icon">
+	                        <ion-icon name="mail"></ion-icon>
+	                    </span>
+	                    <input type="email" name="E-mail" required>
+	                    <label>Email</label>
+	                </div>
+	                <div class="input-box">
+	                    <span class="icon">
+	                        <ion-icon name="lock-closed"></ion-icon>
+	                    </span>
+	                    <input type="password" name="password" required>
+	                    <label>Password</label>
+	                </div>
+	                <div class="remember-forgot">
+	                    <label><input type="checkbox"> Remember me</label>
+	                    <a href="#">Forgot Password?</a>
+	                </div>
+	                <input type="submit" class="btn" value="Login">
+	                <div class="login-register">
+	                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+	                </div>
+	            </form>
+	        </div>
+	        <div class="form-box register">
+	            <h2>Registration</h2>
+	            <form action="SignUpServlet" method="post">
+	                <div class="input-box">
+	                    <span class="icon">
+	                        <ion-icon name="person"></ion-icon>
+	                    </span>
+	                    <input type="text" name="fname">
+	                    <label>First Name</label>
+	                </div>
+	                <div class="input-box">
+	                    <span class="icon">
+	                        <ion-icon name="person"></ion-icon>
+	                    </span>
+	                    <input type="text" name="lname">
+	                    <label>Last Name</label>
+	                </div>
+	                <div class="input-box">
+	                    <span class="icon">
+	                        <ion-icon name="mail"></ion-icon>
+	                    </span>
+	                    <input type="email" name="E-mail">
+	                    <label>Email</label>
+	                </div>
+	                <div class="input-box">
+	                    <span class="icon">
+	                        <ion-icon name="lock-closed"></ion-icon>
+	                    </span>
+	                    <input type="password" name="password" required>
+	                    <label>Password</label>
+	                </div>
+	                <div class="remember-forgot">
+						<label for="user_type_seller"><strong>SELLER</strong></label>
+	                    <input name="user_type" id="user_type_seller" type="radio" value="SELLER">
+	                    <label for="user_type_buyer"><strong>BUYER</strong></label>
+	                    <input name="user_type" id="user_type_buyer" type="radio" value="BUYER">
+	                </div>
+	                
+	                <button type="submit" class="btn">Register</button>
+	                <div class="login-register">
+	                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+	                </div>
+	            </form>
+	        </div>
+	    </div>
+	    <script src="js/script.js"></script>
+	    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	</body>
 </html>

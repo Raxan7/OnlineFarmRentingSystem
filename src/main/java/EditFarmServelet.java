@@ -1,4 +1,3 @@
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,9 +16,7 @@ public class EditFarmServelet extends HttpServlet {
             throws ServletException, IOException {
 
        
-		String farm_id = request.getParameter("farm_id");
-	       // name = "Franciska";
-		
+		String farm_id = request.getParameter("farm_id");	
 		
 		String flocation = request.getParameter("location");
 //		String fImage = request.getParameter("image");
@@ -42,7 +39,7 @@ public class EditFarmServelet extends HttpServlet {
             PrintWriter out = response.getWriter();
             
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db","freedb_saidi", "7*vtUS?fjyBFJg3");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/FarmRentSystemDB","saidi", "blender1");
             
             
             PreparedStatement st = con.prepareStatement("UPDATE farm SET location=?, description=?, farm_size=?, farm_price=?, status=?, contact=? WHERE id=?");
@@ -57,7 +54,7 @@ public class EditFarmServelet extends HttpServlet {
             
             st.close();
             con.close();  
-            response.sendRedirect("Seller.jsp?farm_id="+farm_id);
+            response.sendRedirect(request.getContextPath() + "/templates/Seller.jsp?farm_id="+farm_id);
             
 
     }

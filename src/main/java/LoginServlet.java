@@ -12,10 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
-    @Override
+    private static final long serialVersionUID = 1L;
+
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
@@ -23,9 +27,9 @@ public class LoginServlet extends HttpServlet {
 //    	String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
 //    	String USER = "saidi";
 //    	String PASSWORD = "blender1";
-    	String JDBC_URL = "jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db";
-    	String USER = "freedb_saidi";
-    	String PASSWORD = "7*vtUS?fjyBFJg3";
+    	String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
+    	String USER = "saidi";
+    	String PASSWORD = "blender1";
 		
 		// I/O objects
 		PrintWriter out = response.getWriter();
@@ -38,7 +42,7 @@ public class LoginServlet extends HttpServlet {
 
 		// Connect to the database
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
 			String sql = "SELECT * FROM user WHERE email = '" + email + "'";
 			PreparedStatement statement = conn.prepareStatement(sql);
@@ -50,25 +54,28 @@ public class LoginServlet extends HttpServlet {
 				System.out.println(resultSet.getString(3));
 				System.out.println(resultSet.getString(4));
 				System.out.println(resultSet.getString(5));
-				System.out.println();
-;				if (resultSet.getString(4).equals(password)) {
+				String storedHashedPassword = resultSet.getString(4);
+				boolean passwordMatch = BCrypt.checkpw(password, storedHashedPassword);
+				
+				if (passwordMatch) {
 					out.println("The user with the said password exists");
 					session.setAttribute("email", email);
 					session.setAttribute("first_name", resultSet.getString(2));
 					session.setAttribute("last_name", resultSet.getString(3));
 					session.setAttribute("user_type", resultSet.getString(5));
 					session.setMaxInactiveInterval(3600);
-					response.sendRedirect("test.jsp");
-				} else {
-					out.println("Wrong password or email, please check again");
-				}
+					if (resultSet.getString(5).equals("ADMINISTRATOR")) {
+						response.sendRedirect(request.getContextPath() + "/admin_pages/Admin-Panel.html");
+					} else {
+						response.sendRedirect(request.getContextPath() + "/templates/test.jsp");
+					}
+				} 
 			}
+			response.sendRedirect(request.getContextPath() + "/notLoggedIn.html");	
 			
 			// Close the resources
 			conn.close();
 		} catch (Exception e) {
-			out.println("An error occured");
-			out.println(e);
 			e.printStackTrace();
 		}
 	}

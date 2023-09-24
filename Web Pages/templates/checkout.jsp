@@ -35,7 +35,7 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
         <center>
             <div class="content">
                 <center>
-                    <img src="images/images.png" alt>
+                    <img src="../images/images.png" alt>
                 </center>
                 <br><br><br>
                 <center>
@@ -45,7 +45,7 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
                 </center>
                 <br><br>
                 <center>
-                    <a href="test.jsp"><img style="width: 40px;" src="images/ok.png" alt=""></a>
+                    <a href="test.jsp"><img style="width: 40px;" src="../images/ok.png" alt=""></a>
                 </center>
             </div>
         </center>

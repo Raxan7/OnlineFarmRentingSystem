@@ -10,16 +10,17 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
 	<head>
 		<meta charset="UTF-8">
 		<title>Buyer Assets</title>
-	    <%@ include file="auth/include/navbar_css.html" %>
-	    <link rel="stylesheet" href="css/list_view.css">
+	    <%@ include file="../auth/include/navbar_css.html" %>
+	    <link rel="stylesheet" href="../css/list_view.css">
 	</head>
 	<body style="text-align: center; background: silver;">
-		<%@ include file="auth/form_index.jsp" %>
+		<%@ include file="../auth/form_index.jsp" %>
 		<c:set var="user_id" value="${sessionScope.email}" />
 		
 		<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
-						   url="jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db" 
-						   user="freedb_saidi" password="7*vtUS?fjyBFJg3"/>
+			   url="jdbc:mysql://localhost:3306/FarmRentSystemDB" 
+			   user="saidi" password="blender1"/>
+			   
 		<sql:query dataSource="${db}" var="rs">
 			SELECT * FROM farm WHERE buyer_id = '${user_id }'
 		</sql:query>
@@ -31,7 +32,7 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
 			   		<div class="product">
 					    <div class="product-image">
 					        
-					        <img src="./FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" alt="Product Image">
+					        <img src=".././FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" alt="Product Image">
 					    </div>
 					    <div class="product-details">
 					        <h3 class="product-title">Farm Location : <strong><c:out value="${row.location }"></c:out></strong></h3>
@@ -59,7 +60,7 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
 			</c:forEach>
 		</div>
 		
-		<%@ include file="auth/include/javascripts.html" %>
+		<%@ include file="../auth/include/javascripts.html" %>
 	</body>
 </html>
 

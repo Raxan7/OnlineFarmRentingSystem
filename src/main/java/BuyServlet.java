@@ -35,7 +35,7 @@ public class BuyServlet extends HttpServlet {
          PrintWriter out = response.getWriter();
          
          Class.forName("com.mysql.cj.jdbc.Driver");
-         Connection con = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db","freedb_saidi", "7*vtUS?fjyBFJg3");
+         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/FarmRentSystemDB","saidi", "blender1");
          
          
          PreparedStatement st = con.prepareStatement("UPDATE farm SET sales_status=?, buyer_id=? WHERE id=?");
@@ -46,7 +46,7 @@ public class BuyServlet extends HttpServlet {
          
          st.close();
          con.close();  
-         response.sendRedirect("checkout.jsp?farm_id="+farm_id);
+         response.sendRedirect(request.getContextPath() + "/templates/checkout.jsp?farm_id="+farm_id);
          
 
      } catch(Exception e){

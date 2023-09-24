@@ -10,6 +10,15 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
 
+	<filter>
+	    <filter-name>AuthenticationFilter</filter-name>
+	    <filter-class>AuthenticationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>AuthenticationFilter</filter-name>
+	    <url-pattern>/templates/*</url-pattern> <!-- Specify the URL patterns to filter -->
+	</filter-mapping>
+
   <servlet>
   	<servlet-name>SignUpServlet</servlet-name>
   	<servlet-class>SignUpServlet</servlet-class>
@@ -79,6 +88,65 @@
   	<servlet-name>EmailSendingServlet</servlet-name>
   	<url-pattern>/EmailSendingServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>GetReport</servlet-name>
+  	<servlet-class>GetReport</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>GetReport</servlet-name>
+  	<url-pattern>/GetReport</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Admin settings -->
+  <servlet>
+        <servlet-name>DisplayUsers</servlet-name>
+        <servlet-class>admin.DisplayUsers</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>userData</servlet-name>
+        <servlet-class>admin.userData</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>farmUploadProcess</servlet-name>
+        <servlet-class>admin.farmUploadProcess</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>farmDisplayProcess</servlet-name>
+        <servlet-class>admin.farmDisplayProcess</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteData</servlet-name>
+        <servlet-class>admin.deleteData</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteUser</servlet-name>
+        <servlet-class>admin.deleteUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DisplayUsers</servlet-name>
+        <url-pattern>/DisplayUsers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>userData</servlet-name>
+        <url-pattern>/userData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>farmUploadProcess</servlet-name>
+        <url-pattern>/farmUploadProcess</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>farmDisplayProcess</servlet-name>
+        <url-pattern>/farmDisplayProcess</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteData</servlet-name>
+        <url-pattern>/deleteData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteUser</servlet-name>
+        <url-pattern>/deleteUser</url-pattern>
+    </servlet-mapping>
   
   <!-- SMTP settings -->
     <context-param>

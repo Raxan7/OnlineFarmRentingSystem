@@ -113,8 +113,9 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
 			<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 			
 			<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
-							   url="jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db" 
-							   user="freedb_saidi" password="7*vtUS?fjyBFJg3"/>
+			   url="jdbc:mysql://localhost:3306/FarmRentSystemDB" 
+			   user="saidi" password="blender1"/>
+			   
 			<sql:query dataSource="${db}" var="rs">
 				SELECT * FROM farm WHERE id = <c:out value="${param.farm_id }"></c:out>
 			</sql:query>
@@ -131,7 +132,7 @@ response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidat
 	                   </div>
 		               <br>
 		               <div class="image">
-		                   <img src="./FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" alt="">
+		                   <img src=".././FarmDataRetrieveServlet?id=<c:out value="${row.id }"></c:out>" alt="">
 		               </div>
 		               <input type="submit" value="Confirm transaction ">
 		           </form>

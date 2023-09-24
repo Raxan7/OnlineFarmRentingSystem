@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>admin panel</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/mdb.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        
+    </head>
+    <body>
+        <form method="post" action="userData">
+            <label>first name</label><br>
+            <input type="text" name="firstname" placeholder="firstname"><br>
+            <label>last name</label><br>
+            <input type="text" name="lastname" placeholder="lastname"><br>
+            <label>email</label><br>
+            <input type="email" name="email" placeholder="email"><br>
+            <label>Password</label><br>
+            <input type="password" name="password" placeholder="password"><br>
+            <label>user type</label><br>
+            <select name="user_type" class="form-select" aria-label="Default select example">
+                <option>--user type--</option>
+                <option value="ADMINISTRATOR">Administrator</option>
+                <option value="BUYER">Buyer</option>
+                <option value="BUYER">Seller</option>
+            </select>
+            <input type="submit" name="submit" value="register">
+        </form>
+        <a href="DisplayUsers">jsp page</a><br>
+        <a href="Admin-Panel.html">admin panel</a><br>
+        <a href="UploadFarm.html">upload farm</a>
+        <a href="farmDisplayProcess">display farm</a>
+    </body>
+</html>

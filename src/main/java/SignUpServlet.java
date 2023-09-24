@@ -14,17 +14,21 @@ import javax.servlet.http.HttpSession;
 
 import java.sql.SQLException;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 
 
 @WebServlet("/SignUpServlet")
 public class SignUpServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Connect to the actual form and send data into the database
 		
-		String JDBC_URL = "jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db";
-    	String USER = "freedb_saidi";
-    	String PASSWORD = "7*vtUS?fjyBFJg3";
+		String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
+    	String USER = "saidi";
+    	String PASSWORD = "blender1";
 		// I/O objects
 		PrintWriter out = response.getWriter();
 		
@@ -35,12 +39,8 @@ public class SignUpServlet extends HttpServlet {
 		String last_name = request.getParameter("lname");
 		String email = request.getParameter("E-mail");
 		String password = request.getParameter("password");
+		String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 		String user_type = request.getParameter("user_type");
-		
-//		String first_name = "Saidi";
-//		String last_name = "Manyerere";
-//		String email = "manyerere201@gmail.com";
-//		String password = "blender1";
 		
 		// Connect to the database
 		try {
@@ -51,7 +51,7 @@ public class SignUpServlet extends HttpServlet {
 			statement.setString(1, email);
 			statement.setString(2, first_name);
 			statement.setString(3, last_name);
-			statement.setString(4, password);
+			statement.setString(4, hashedPassword);
 			statement.setString(5, user_type);
 			statement.executeUpdate();
 			
@@ -65,7 +65,7 @@ public class SignUpServlet extends HttpServlet {
 			session.setAttribute("user_type", user_type);
 			session.setMaxInactiveInterval(3600);
 			
-			response.sendRedirect("test.jsp");
+			response.sendRedirect(request.getContextPath() + "/templates/test.jsp");
 			// out.print("Successfully sent the data into the database");
 		} catch (ClassNotFoundException | SQLException e) {
 			out.print("An error occured");

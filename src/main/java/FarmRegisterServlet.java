@@ -32,9 +32,9 @@ public class FarmRegisterServlet extends HttpServlet {
 //		String USER = "saidi";
 //		String PASSWORD = "blender1";
 		
-		String JDBC_URL = "jdbc:mysql://sql.freedb.tech:3306/freedb_raxan7_db";
-    	String USER = "freedb_saidi";
-    	String PASSWORD = "7*vtUS?fjyBFJg3";
+		String JDBC_URL = "jdbc:mysql://localhost:3306/FarmRentSystemDB";
+    	String USER = "saidi";
+    	String PASSWORD = "blender1";
 		
 		// doGet(request, response);
 		// Get the image file from the request
@@ -76,7 +76,7 @@ public class FarmRegisterServlet extends HttpServlet {
          // Send a success message to the client
             response.setContentType("text/plain");
             response.getWriter().write("Image uploaded successfully");
-            response.sendRedirect("test.jsp");
+            response.sendRedirect(request.getContextPath() + "/templates/test.jsp");
         } catch (Exception e) {
             e.printStackTrace();
          // Send a success message to the client
